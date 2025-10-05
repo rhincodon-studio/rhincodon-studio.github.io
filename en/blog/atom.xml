@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rhincodon-studio.github.io/en/blog</id>
-    <title>Rhincodon Studio Blog Blog</title>
+    <title>Rhincodon Studio Blog</title>
     <updated>2025-10-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rhincodon-studio.github.io/en/blog"/>
-    <subtitle>Rhincodon Studio Blog Blog</subtitle>
+    <subtitle>Rhincodon Studio Blog</subtitle>
     <icon>https://rhincodon-studio.github.io/en/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[first-blog-post]]></title>
