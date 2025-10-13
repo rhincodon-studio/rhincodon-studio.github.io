@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"All posts","items":[{"title":"Why the World Calls Him \u201cDa Vinci\u201d","permalink":"/blog/leonardo-da-vinci-name","unlisted":false,"date":"2025-10-12T00:00:00.000Z"}]}')}}]);

@@ -2,15 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rhincodon-studio.github.io/en/blog</id>
     <title>Rhincodon Studio Blog</title>
-    <updated>2025-10-05T00:00:00.000Z</updated>
+    <updated>2025-10-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rhincodon-studio.github.io/en/blog"/>
     <subtitle>Rhincodon Studio Blog</subtitle>
     <icon>https://rhincodon-studio.github.io/en/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[first-blog-post]]></title>
-        <id>https://rhincodon-studio.github.io/en/blog/2025/10/05/first-blog-post</id>
-        <link href="https://rhincodon-studio.github.io/en/blog/2025/10/05/first-blog-post"/>
-        <updated>2025-10-05T00:00:00.000Z</updated>
+        <title type="html"><![CDATA[Why the World Calls Him “Da Vinci”]]></title>
+        <id>https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name</id>
+        <link href="https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name"/>
+        <updated>2025-10-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exploring why the world calls Leonardo “Da Vinci,” when it really just means “from Vinci.”]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p><em>“Leonardo di ser Piero da Vinci” — Leonardo, son of Piero from Vinci.</em></p>
+</blockquote>
+<p>Today I came across something interesting about <strong>Leonardo da Vinci</strong>, the legendary polymath who lived during the Renaissance.<br>
+<!-- -->He was <strong>born on April 15, 1452</strong>, and <strong>died on 2 May 1519</strong>.</p>
+<p>His full name was <strong>Leonardo di ser Piero da Vinci</strong>, which literally means:</p>
+<blockquote>
+<p><strong>Leonardo, son of Piero from Vinci</strong></p>
+</blockquote>
+<p>The phrase <strong>“da Vinci”</strong> simply means <em>“from Vinci”</em>, referring to a small town near Florence in the <strong>Republic of Florence (Repubblica Fiorentina)</strong>.</p>
+<p>What’s fascinating is that the entire world now calls him <strong>“Da Vinci”</strong>,<br>
+<!-- -->as if “Vinci” were his family name — but in reality, it’s just where he was born.</p>
+<p>Imagine if a brilliant person were born in Taipei,<br>
+<!-- -->and the whole world started calling them <strong>“Taipei”</strong> instead of their real name.<br>
+<!-- -->That’s essentially what happened with Leonardo da Vinci.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h3>
+<p>李奧納多的名字其實代表了他的出身：</p>
+<blockquote>
+<p><strong>Leonardo di ser Piero da Vinci = 李奧納多，皮耶羅之子，來自文西城。</strong></p>
+</blockquote>
+<p>但世人卻以他的出生地「文西」來稱呼他。<br>
+<!-- -->這樣的現象不僅反映語言習慣，也讓我們看到歷史如何在傳播中重新塑造一個人的名字與身份。</p>]]></content>
+        <author>
+            <name>rhincodon-studio</name>
+            <uri>https://rhincodon-studio.github.io/</uri>
+        </author>
+        <category label="history" term="history"/>
+        <category label="art" term="art"/>
+        <category label="language" term="language"/>
+        <category label="leonardo-da-vinci" term="leonardo-da-vinci"/>
     </entry>
 </feed>
