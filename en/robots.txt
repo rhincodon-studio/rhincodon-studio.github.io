@@ -1,0 +1,20 @@
+# -----------------------------------------
+# Global rule
+# -----------------------------------------
+User-agent: *
+Allow: /
+
+# Block development/utility pages
+Disallow: /search
+Disallow: /tags
+Disallow: /__docusaurus
+Disallow: /internal/
+
+# Prevent crawling of query parameters patterns
+Disallow: /*?*preview=true
+Disallow: /*?*session=
+
+# -----------------------------------------
+# Sitemap
+# -----------------------------------------
+Sitemap: https://你的網域/sitemap.xml
