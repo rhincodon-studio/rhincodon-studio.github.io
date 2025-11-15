@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://rhincodon-studio.github.io/en/blog</id>
+    <id>https://rhincodon.studio/en/blog</id>
     <title>Rhincodon Studio Blog</title>
     <updated>2025-10-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://rhincodon-studio.github.io/en/blog"/>
+    <link rel="alternate" href="https://rhincodon.studio/en/blog"/>
     <subtitle>Rhincodon Studio Blog</subtitle>
-    <icon>https://rhincodon-studio.github.io/en/img/favicon.ico</icon>
+    <icon>https://rhincodon.studio/en/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Why the World Calls Him “Da Vinci”]]></title>
-        <id>https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name</id>
-        <link href="https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name"/>
+        <id>https://rhincodon.studio/en/blog/leonardo-da-vinci-name</id>
+        <link href="https://rhincodon.studio/en/blog/leonardo-da-vinci-name"/>
         <updated>2025-10-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Exploring why the world calls Leonardo “Da Vinci,” when it really just means “from Vinci.”]]></summary>
         <content type="html"><![CDATA[<blockquote>
@@ -29,7 +29,7 @@
 <!-- -->and the whole world started calling them <strong>“Taipei”</strong> instead of their real name.<br>
 <!-- -->That’s essentially what happened with Leonardo da Vinci.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon.studio/en/blog/leonardo-da-vinci-name#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h3>
 <p>李奧納多的名字其實代表了他的出身：</p>
 <blockquote>
 <p><strong>Leonardo di ser Piero da Vinci = 李奧納多，皮耶羅之子，來自文西城。</strong></p>

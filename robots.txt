@@ -17,4 +17,4 @@ Disallow: /*?*session=
 # -----------------------------------------
 # Sitemap
 # -----------------------------------------
-Sitemap: https://你的網域/sitemap.xml
+Sitemap: https://rhincodon.studio/sitemap.xml

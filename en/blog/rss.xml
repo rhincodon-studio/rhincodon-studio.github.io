@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Rhincodon Studio Blog</title>
-        <link>https://rhincodon-studio.github.io/en/blog</link>
+        <link>https://rhincodon.studio/en/blog</link>
         <description>Rhincodon Studio Blog</description>
         <lastBuildDate>Sun, 12 Oct 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Why the World Calls Him “Da Vinci”]]></title>
-            <link>https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name</link>
-            <guid>https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name</guid>
+            <link>https://rhincodon.studio/en/blog/leonardo-da-vinci-name</link>
+            <guid>https://rhincodon.studio/en/blog/leonardo-da-vinci-name</guid>
             <pubDate>Sun, 12 Oct 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Exploring why the world calls Leonardo “Da Vinci,” when it really just means “from Vinci.”]]></description>
             <content:encoded><![CDATA[<blockquote>
@@ -30,7 +30,7 @@
 <!-- -->and the whole world started calling them <strong>“Taipei”</strong> instead of their real name.<br>
 <!-- -->That’s essentially what happened with Leonardo da Vinci.</p>
 <hr>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon-studio.github.io/en/blog/leonardo-da-vinci-name#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon.studio/en/blog/leonardo-da-vinci-name#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h3>
 <p>李奧納多的名字其實代表了他的出身：</p>
 <blockquote>
 <p><strong>Leonardo di ser Piero da Vinci = 李奧納多，皮耶羅之子，來自文西城。</strong></p>
