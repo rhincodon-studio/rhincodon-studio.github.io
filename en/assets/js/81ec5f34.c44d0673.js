@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7882],{6341:o=>{o.exports=JSON.parse('{"authors":[{"name":"rhincodon-studio","title":"rhincodon-studio","url":"https://rhincodon-studio.github.io/","page":{"permalink":"/en/blog/authors/rhincodon-studio"},"key":"rhincodon-studio","count":1}]}')}}]);
