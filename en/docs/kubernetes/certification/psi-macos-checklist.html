@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-kubernetes/certification/psi-macos-checklist" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.1">
+<title data-rh="true">PSI Exam System Requirements (macOS) | Rhincodon Studio</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" property="og:image" content="https://rhincodon.studio/en/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://rhincodon.studio/en/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://rhincodon.studio/en/docs/kubernetes/certification/psi-macos-checklist"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="zh_Hant"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="keywords" content="cooking, blog"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PSI Exam System Requirements (macOS) | Rhincodon Studio"><meta data-rh="true" name="description" content="Complete PSI Secure Browser &amp; Chrome Extension requirements and best practices for macOS users preparing for CNCF CKA, CKAD, CKS exams."><meta data-rh="true" property="og:description" content="Complete PSI Secure Browser &amp; Chrome Extension requirements and best practices for macOS users preparing for CNCF CKA, CKAD, CKS exams."><link data-rh="true" rel="icon" href="/en/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://rhincodon.studio/en/docs/kubernetes/certification/psi-macos-checklist"><link data-rh="true" rel="alternate" href="https://rhincodon.studio/docs/kubernetes/certification/psi-macos-checklist" hreflang="zh-Hant"><link data-rh="true" rel="alternate" href="https://rhincodon.studio/en/docs/kubernetes/certification/psi-macos-checklist" hreflang="en"><link data-rh="true" rel="alternate" href="https://rhincodon.studio/docs/kubernetes/certification/psi-macos-checklist" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Kubernetes","item":"https://rhincodon.studio/en/docs/category/kubernetes"},{"@type":"ListItem","position":2,"name":"PSI System Requirements (macOS)","item":"https://rhincodon.studio/en/docs/kubernetes/certification/psi-macos-checklist"}]}</script><link rel="alternate" type="application/rss+xml" href="/en/blog/rss.xml" title="Rhincodon Studio RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/en/blog/atom.xml" title="Rhincodon Studio Atom Feed">
+
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PRNEFR65DN"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-PRNEFR65DN",{anonymize_ip:!0})</script>
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","url":"https://rhincodon.studio","name":"Rhincodon Studio","description":"Deep Dive into Tech & Ideas"},{"@type":"Organization","name":"Rhincodon Studio","url":"https://rhincodon.studio","logo":"https://rhincodon.studio/img/logo.png"},{"@type":"WebPage","name":"Rhincodon Studio","url":"https://rhincodon.studio"}]}</script>
+
+<link rel="preconnect" href="https://rhincodon.studio">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Organization","name":"Meta Open Source","url":"https://opensource.fb.com/","logo":"https://opensource.fb.com/img/logos/Meta-Open-Source.svg"}</script><link rel="stylesheet" href="/en/assets/css/styles.8770b188.css">
+<script src="/en/assets/js/runtime~main.abfc23de.js" defer="defer"></script>
+<script src="/en/assets/js/main.0c533ac9.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/en/img/logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/en/"><div class="navbar__logo"><img src="/en/img/logo.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/en/img/logo.png" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">rhincodon studio</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/en/docs/intro">Architecture</a><a class="navbar__item navbar__link" href="/en/blog">Blog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/docs/kubernetes/certification/psi-macos-checklist" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh-Hant">繁體中文</a></li><li><a href="/en/docs/kubernetes/certification/psi-macos-checklist" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/en/docs/intro"><span title="軟體架構與實務導覽" class="linkLabel_WmDU">軟體架構與實務導覽</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/category/devops"><span title="DevOps" class="categoryLinkLabel_W154">DevOps</span></a><button aria-label="Expand sidebar category &#x27;DevOps&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/category/bpmn"><span title="BPMN" class="categoryLinkLabel_W154">BPMN</span></a><button aria-label="Expand sidebar category &#x27;BPMN&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/en/docs/category/kubernetes"><span title="Kubernetes" class="categoryLinkLabel_W154">Kubernetes</span></a><button aria-label="Collapse sidebar category &#x27;Kubernetes&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/kubernetes/kubernetes-intro"><span title="Kubernetes 基本介紹" class="linkLabel_WmDU">Kubernetes 基本介紹</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/kubernetes/architecture"><span title="架構與核心元件" class="linkLabel_WmDU">架構與核心元件</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/category/control-plane"><span title="Control Plane" class="categoryLinkLabel_W154">Control Plane</span></a><button aria-label="Expand sidebar category &#x27;Control Plane&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/category/worker-node"><span title="Worker Node" class="categoryLinkLabel_W154">Worker Node</span></a><button aria-label="Expand sidebar category &#x27;Worker Node&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/en/docs/category/objects"><span title="Objects" class="categoryLinkLabel_W154">Objects</span></a><button aria-label="Expand sidebar category &#x27;Objects&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/en/docs/kubernetes/certification/psi-macos-checklist"><span title="certification" class="categoryLinkLabel_W154">certification</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/en/docs/kubernetes/certification/psi-macos-checklist"><span title="PSI System Requirements (macOS)" class="linkLabel_WmDU">PSI System Requirements (macOS)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/en/docs/kubernetes/certification/cka-ckad-important-instructions"><span title="Important Instructions (CKA/CKAD)" class="linkLabel_WmDU">Important Instructions (CKA/CKAD)</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/category/kubernetes--rke2"><span title="Kubernetes / RKE2" class="categoryLinkLabel_W154">Kubernetes / RKE2</span></a><button aria-label="Expand sidebar category &#x27;Kubernetes / RKE2&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/airflow"><span title="Apache Airflow" class="categoryLinkLabel_W154">Apache Airflow</span></a><button aria-label="Expand sidebar category &#x27;Apache Airflow&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/category/dapr"><span title="DAPR" class="categoryLinkLabel_W154">DAPR</span></a><button aria-label="Expand sidebar category &#x27;DAPR&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/en/docs/category/收費與諮詢"><span title="收費與諮詢" class="categoryLinkLabel_W154">收費與諮詢</span></a><button aria-label="Expand sidebar category &#x27;收費與諮詢&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/en/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/en/docs/category/kubernetes"><span>Kubernetes</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">certification</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">PSI System Requirements (macOS)</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>PSI Exam System Requirements (macOS)</h1></header><blockquote>
+<p><strong>Important:</strong><br>
+<!-- -->請務必在進行任何設定前，先執行 PSI 官方系統檢查工具：<br>
+<!-- -->👉 <a href="https://syscheck.bridge.psiexams.com/" target="_blank" rel="noopener noreferrer">https://syscheck.bridge.psiexams.com/</a></p>
+<p>此工具會檢查：攝影機、麥克風、網路、解析度、OS、禁止程式等<br>
+<!-- -->能提早發現可能造成 <strong>CKA / CKAD / CKS 考試失敗</strong> 的環境問題。</p>
+<p><strong>Note:</strong><br>
+<!-- -->本文件根據 PSI 官方規範重新整理而成。<br>
+<!-- -->詳細內容請參考原文：<br>
+<a href="https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260-PSI-secure-browser-and-Chrome-Extension-System-Requirements" target="_blank" rel="noopener noreferrer">https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260-PSI-secure-browser-and-Chrome-Extension-System-Requirements</a></p>
+</blockquote>
+<hr>
+<h1>PSI Exam System Requirements for macOS</h1>
+<p>(For CKA / CKAD / CKS Candidates)</p>
+<p>本文件整理 PSI Secure Browser 與 PSI Chrome Extension 官方規範，並特別針對 <strong>macOS 使用者</strong>提供最佳實務流程。<br>
+<!-- -->建議在考前 48 小時內完整檢查一次。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-supported-operating-systemsmacos">1. Supported Operating Systems（macOS）<a href="#1-supported-operating-systemsmacos" class="hash-link" aria-label="Direct link to 1. Supported Operating Systems（macOS）" title="Direct link to 1. Supported Operating Systems（macOS）" translate="no">​</a></h2>
+<p>PSI Secure Browser 與 Chrome Extension 支援以下 macOS：</p>
+<table><thead><tr><th>macOS 版本</th><th>Secure Browser</th><th>Chrome Extension</th><th>備註</th></tr></thead><tbody><tr><td><strong>Sonoma (14.x)</strong></td><td>✔ 支援</td><td>✔ 支援</td><td>建議版本</td></tr><tr><td><strong>Sequoia (15.x)</strong></td><td>✔ 支援</td><td>✔ 支援</td><td>最新支援</td></tr><tr><td><strong>Tahoe (26.x)</strong></td><td>✔ 支援（2025/10 起）</td><td>❔ 未公布</td><td>PSI 宣布將支援</td></tr><tr><td><strong>Ventura (13.x)</strong></td><td>✔ 支援至 2025/11~12</td><td>✔ 支援</td><td>將終止支援</td></tr><tr><td><strong>Monterey (12.x)</strong></td><td>❌ 不支援</td><td>❌ 不支援</td><td>自 2024/12/02 終止</td></tr></tbody></table>
+<blockquote>
+<p><strong>若使用 macOS Monterey（12.x），將無法進行考試。</strong></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-display--resolution-requirements">2. Display &amp; Resolution Requirements<a href="#2-display--resolution-requirements" class="hash-link" aria-label="Direct link to 2. Display &amp; Resolution Requirements" title="Direct link to 2. Display &amp; Resolution Requirements" translate="no">​</a></h2>
+<ul>
+<li><strong>最低解析度</strong>：1024×768</li>
+<li><strong>建議解析度</strong>：<strong>1920×1080</strong>（PSI 官方強烈推薦）</li>
+</ul>
+<p>macOS Retina 高解析度建議在考試前調整為：</p>
+<blockquote>
+<p>系統設定 → 顯示器 → 解析度 →「更多空間（1920×1080）」</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-memory-storage--hardware">3. Memory, Storage &amp; Hardware<a href="#3-memory-storage--hardware" class="hash-link" aria-label="Direct link to 3. Memory, Storage &amp; Hardware" title="Direct link to 3. Memory, Storage &amp; Hardware" translate="no">​</a></h2>
+<table><thead><tr><th>資源</th><th>要求</th></tr></thead><tbody><tr><td><strong>RAM</strong></td><td>最低 8 GB，建議 <strong>16 GB</strong></td></tr><tr><td><strong>硬碟空間</strong></td><td>500 MB 以上（用於下載 Secure Browser）</td></tr><tr><td><strong>相機</strong></td><td>必須可進行 <strong>360° 室內環境掃描</strong></td></tr><tr><td><strong>麥克風</strong></td><td>必須全程開啟（禁止耳機、AirPods）</td></tr><tr><td><strong>揚聲器</strong></td><td>建議使用電腦內建喇叭</td></tr><tr><td><strong>外接設備</strong></td><td>不可有額外攝影機、麥克風、螢幕（建議拔除）</td></tr></tbody></table>
+<blockquote>
+<p><strong>筆電使用者需手持筆電轉圈掃描整個房間。</strong><br>
+<strong>桌機使用者需準備外接可移動之 USB 攝影機。</strong></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-internet-requirements">4. Internet Requirements<a href="#4-internet-requirements" class="hash-link" aria-label="Direct link to 4. Internet Requirements" title="Direct link to 4. Internet Requirements" translate="no">​</a></h2>
+<ul>
+<li><strong>最低 750 kbps 上下行</strong></li>
+<li><strong>推薦 3 Mbps 以上</strong></li>
+<li><strong>建議 30 Mbps 以上（最佳）</strong></li>
+</ul>
+<p>請在考前測試：</p>
+<ul>
+<li><a href="https://video-diagnostics.twilio.com/" target="_blank" rel="noopener noreferrer">https://video-diagnostics.twilio.com/</a></li>
+<li><a href="https://speed.cloudflare.com/" target="_blank" rel="noopener noreferrer">https://speed.cloudflare.com/</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="禁止">禁止<a href="#禁止" class="hash-link" aria-label="Direct link to 禁止" title="Direct link to 禁止" translate="no">​</a></h3>
+<ul>
+<li>VPN</li>
+<li>Proxy</li>
+<li>公司網路（企業 Firewall 會阻擋 PSI 連線）</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="5-macos-必做設定非常重要">5. macOS 必做設定（非常重要）<a href="#5-macos-必做設定非常重要" class="hash-link" aria-label="Direct link to 5. macOS 必做設定（非常重要）" title="Direct link to 5. macOS 必做設定（非常重要）" translate="no">​</a></h2>
+<p>以下為 PSI 官方針對 macOS 的必要操作：</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-必須關閉-bluetooth">🔧 必須關閉 Bluetooth<a href="#-必須關閉-bluetooth" class="hash-link" aria-label="Direct link to 🔧 必須關閉 Bluetooth" title="Direct link to 🔧 必須關閉 Bluetooth" translate="no">​</a></h3>
+<p>防止被判定使用無線耳機（多數考試禁止耳機）。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-關閉所有非必要程式">🔧 關閉所有非必要程式<a href="#-關閉所有非必要程式" class="hash-link" aria-label="Direct link to 🔧 關閉所有非必要程式" title="Direct link to 🔧 關閉所有非必要程式" translate="no">​</a></h3>
+<p>以下程式一定要關閉：</p>
+<ul>
+<li>Teams</li>
+<li>Zoom</li>
+<li>Slack</li>
+<li>Discord</li>
+<li>LINE / WeChat</li>
+<li>Dropbox / Google Drive / OneDrive</li>
+<li>Notion（會偵測剪貼板權限）</li>
+<li>防毒軟體（若掃描功能影響效能）</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-停止所有自動同步">🔧 停止所有自動同步<a href="#-停止所有自動同步" class="hash-link" aria-label="Direct link to 🔧 停止所有自動同步" title="Direct link to 🔧 停止所有自動同步" translate="no">​</a></h3>
+<p>尤其是：</p>
+<ul>
+<li>iCloud Drive</li>
+<li>Dropbox Sync</li>
+<li>Google Drive File Stream</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-拔除所有外接設備建議">🔧 拔除所有外接設備（建議）<a href="#-拔除所有外接設備建議" class="hash-link" aria-label="Direct link to 🔧 拔除所有外接設備（建議）" title="Direct link to 🔧 拔除所有外接設備（建議）" translate="no">​</a></h3>
+<ul>
+<li>外接螢幕</li>
+<li>USB 攝影機</li>
+<li>USB 麥克風</li>
+<li>USB 擴充座</li>
+<li>任何額外 USB 驅動裝置</li>
+</ul>
+<p>（PSI 在 macOS 上對多攝影機、多麥克風特別敏感。）</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="6-testing-software-secure-browser">6. Testing Software: Secure Browser<a href="#6-testing-software-secure-browser" class="hash-link" aria-label="Direct link to 6. Testing Software: Secure Browser" title="Direct link to 6. Testing Software: Secure Browser" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="secure-browser-必須注意">Secure Browser 必須注意：<a href="#secure-browser-必須注意" class="hash-link" aria-label="Direct link to Secure Browser 必須注意：" title="Direct link to Secure Browser 必須注意：" translate="no">​</a></h3>
+<ul>
+<li>請務必重新下載最新版</li>
+<li>不可從 Terminal 啟動</li>
+<li>不可存在殘留舊版本（需清除）</li>
+</ul>
+<p>建議刪除：</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">~/Library/Application Support/PSI</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Applications/PSI Secure Browser.app</span><br></span></code></pre></div></div>
+<p>再重新下載官方版本。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="7-chrome-extension-模式若你不是使用-secure-browser">7. Chrome Extension 模式（若你不是使用 Secure Browser）<a href="#7-chrome-extension-模式若你不是使用-secure-browser" class="hash-link" aria-label="Direct link to 7. Chrome Extension 模式（若你不是使用 Secure Browser）" title="Direct link to 7. Chrome Extension 模式（若你不是使用 Secure Browser）" translate="no">​</a></h2>
+<p>若使用 Chrome Extension：</p>
+<ul>
+<li>需使用最新 Chrome</li>
+<li>macOS 14 / 15 完整支援</li>
+<li>仍需能執行 360° 室內環境掃描</li>
+<li>仍不可使用耳機</li>
+<li>仍需拔掉多餘攝影機與麥克風</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="8-room--desk-requirements">8. Room &amp; Desk Requirements<a href="#8-room--desk-requirements" class="hash-link" aria-label="Direct link to 8. Room &amp; Desk Requirements" title="Direct link to 8. Room &amp; Desk Requirements" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="必備">必備<a href="#必備" class="hash-link" aria-label="Direct link to 必備" title="Direct link to 必備" translate="no">​</a></h3>
+<ul>
+<li>光線足夠</li>
+<li>臉部要清楚</li>
+<li>桌面乾淨</li>
+<li>只有一台電腦</li>
+<li>門窗需關閉</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="禁止-1">禁止<a href="#禁止-1" class="hash-link" aria-label="Direct link to 禁止" title="Direct link to 禁止" translate="no">​</a></h3>
+<ul>
+<li>任何紙張、筆記、書本</li>
+<li>手機（僅能在驗證身份時短暫使用）</li>
+<li>平板</li>
+<li>第二台螢幕</li>
+<li>小孩、嬰兒、寵物</li>
+<li>其他人進出房間</li>
+</ul>
+<blockquote>
+<p>如果有人進入房間，考試可能會 <strong>立即中止</strong>。</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="9-troubleshooting-macos">9. Troubleshooting (macOS)<a href="#9-troubleshooting-macos" class="hash-link" aria-label="Direct link to 9. Troubleshooting (macOS)" title="Direct link to 9. Troubleshooting (macOS)" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-相機無法偵測">❗ 相機無法偵測<a href="#-相機無法偵測" class="hash-link" aria-label="Direct link to ❗ 相機無法偵測" title="Direct link to ❗ 相機無法偵測" translate="no">​</a></h3>
+<ol>
+<li>系統設定 → 隱私權與安全性 → 相機</li>
+<li>確保已允許：<!-- -->
+<ul>
+<li>Secure Browser</li>
+<li>Chrome</li>
+<li>FaceTime</li>
+</ul>
+</li>
+<li>測試：<!-- -->
+<ul>
+<li><a href="https://webcamtests.com" target="_blank" rel="noopener noreferrer">https://webcamtests.com</a></li>
+<li>FaceTime App</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-麥克風無法偵測">❗ 麥克風無法偵測<a href="#-麥克風無法偵測" class="hash-link" aria-label="Direct link to ❗ 麥克風無法偵測" title="Direct link to ❗ 麥克風無法偵測" translate="no">​</a></h3>
+<ol>
+<li>系統設定 → 隱私權與安全性 → 麥克風</li>
+<li>確保只啟用一個輸入設備</li>
+<li>測試：<!-- -->
+<ul>
+<li><a href="https://www.onlinemictest.com" target="_blank" rel="noopener noreferrer">https://www.onlinemictest.com</a></li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-secure-browser-變慢--當掉">❗ Secure Browser 變慢 / 當掉<a href="#-secure-browser-變慢--當掉" class="hash-link" aria-label="Direct link to ❗ Secure Browser 變慢 / 當掉" title="Direct link to ❗ Secure Browser 變慢 / 當掉" translate="no">​</a></h3>
+<ul>
+<li>關閉防毒軟體</li>
+<li>關閉所有同步程式</li>
+<li>重啟 mac</li>
+<li>清空 RAM（建議至少 50% 可用記憶體）</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="10-pre-exam-tutorial強烈建議">10. Pre-Exam Tutorial（強烈建議）<a href="#10-pre-exam-tutorial強烈建議" class="hash-link" aria-label="Direct link to 10. Pre-Exam Tutorial（強烈建議）" title="Direct link to 10. Pre-Exam Tutorial（強烈建議）" translate="no">​</a></h2>
+<p>PSI 提供 Tutorial 測試，可先驗證環境：</p>
+<ul>
+<li>會檢查攝影機</li>
+<li>會檢查麥克風</li>
+<li>會檢查禁止程式</li>
+<li>會檢查網路與連線穩定度</li>
+</ul>
+<p><strong>請至少在正式考前一天測試一次。</strong></p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="11-48-hour-checklist專為-macos-考生">11. 48-Hour Checklist（專為 macOS 考生）<a href="#11-48-hour-checklist專為-macos-考生" class="hash-link" aria-label="Direct link to 11. 48-Hour Checklist（專為 macOS 考生）" title="Direct link to 11. 48-Hour Checklist（專為 macOS 考生）" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="系統">系統<a href="#系統" class="hash-link" aria-label="Direct link to 系統" title="Direct link to 系統" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->macOS 14 或 15（不是 Monterey）</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->重開機</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->關閉 Bluetooth</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->關閉 VPN</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="網路">網路<a href="#網路" class="hash-link" aria-label="Direct link to 網路" title="Direct link to 網路" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->速度至少 30 Mbps</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->不使用公司網路</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->測試：<a href="https://video-diagnostics.twilio.com/" target="_blank" rel="noopener noreferrer">https://video-diagnostics.twilio.com/</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="介面與設備">介面與設備<a href="#介面與設備" class="hash-link" aria-label="Direct link to 介面與設備" title="Direct link to 介面與設備" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->調整 1920×1080 顯示</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->拔除所有外接設備</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->只保留一台攝影機、麥克風</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="環境">環境<a href="#環境" class="hash-link" aria-label="Direct link to 環境" title="Direct link to 環境" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->桌面乾淨</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->房間無人</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->打光足夠（可見臉部）</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="軟體">軟體<a href="#軟體" class="hash-link" aria-label="Direct link to 軟體" title="Direct link to 軟體" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->關閉 Teams/Zoom/Slack/LINE/Discord</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->關閉 Dropbox/Google Drive/iCloud</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->關閉防毒軟體（考完再開）</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="測試">測試<a href="#測試" class="hash-link" aria-label="Direct link to 測試" title="Direct link to 測試" translate="no">​</a></h3>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->完成 PSI Tutorial 測試</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->確認相機可以進行 360° 室內掃描</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="12-final-notes">12. Final Notes<a href="#12-final-notes" class="hash-link" aria-label="Direct link to 12. Final Notes" title="Direct link to 12. Final Notes" translate="no">​</a></h2>
+<p>使用 macOS 考 CKA / CKAD / CKS 完全可行，只要符合以下三點：</p>
+<ol>
+<li><strong>使用 Sonoma 14 或 Sequoia 15</strong></li>
+<li><strong>關閉 Bluetooth、拔除額外設備</strong></li>
+<li><strong>網路穩定 + 做過 Tutorial 測試</strong></li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/cka">cka</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/ckad">ckad</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/cks">cks</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/psi">psi</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/system-requirements">system-requirements</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/en/docs/tags/macos">macos</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/kubernetes/certification/check-list.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/en/docs/kubernetes/pod"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Pod</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/en/docs/kubernetes/certification/cka-ckad-important-instructions"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Important Instructions (CKA/CKAD)</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-supported-operating-systemsmacos" class="table-of-contents__link toc-highlight">1. Supported Operating Systems（macOS）</a></li><li><a href="#2-display--resolution-requirements" class="table-of-contents__link toc-highlight">2. Display &amp; Resolution Requirements</a></li><li><a href="#3-memory-storage--hardware" class="table-of-contents__link toc-highlight">3. Memory, Storage &amp; Hardware</a></li><li><a href="#4-internet-requirements" class="table-of-contents__link toc-highlight">4. Internet Requirements</a><ul><li><a href="#禁止" class="table-of-contents__link toc-highlight">禁止</a></li></ul></li><li><a href="#5-macos-必做設定非常重要" class="table-of-contents__link toc-highlight">5. macOS 必做設定（非常重要）</a><ul><li><a href="#-必須關閉-bluetooth" class="table-of-contents__link toc-highlight">🔧 必須關閉 Bluetooth</a></li><li><a href="#-關閉所有非必要程式" class="table-of-contents__link toc-highlight">🔧 關閉所有非必要程式</a></li><li><a href="#-停止所有自動同步" class="table-of-contents__link toc-highlight">🔧 停止所有自動同步</a></li><li><a href="#-拔除所有外接設備建議" class="table-of-contents__link toc-highlight">🔧 拔除所有外接設備（建議）</a></li></ul></li><li><a href="#6-testing-software-secure-browser" class="table-of-contents__link toc-highlight">6. Testing Software: Secure Browser</a><ul><li><a href="#secure-browser-必須注意" class="table-of-contents__link toc-highlight">Secure Browser 必須注意：</a></li></ul></li><li><a href="#7-chrome-extension-模式若你不是使用-secure-browser" class="table-of-contents__link toc-highlight">7. Chrome Extension 模式（若你不是使用 Secure Browser）</a></li><li><a href="#8-room--desk-requirements" class="table-of-contents__link toc-highlight">8. Room &amp; Desk Requirements</a><ul><li><a href="#必備" class="table-of-contents__link toc-highlight">必備</a></li><li><a href="#禁止-1" class="table-of-contents__link toc-highlight">禁止</a></li></ul></li><li><a href="#9-troubleshooting-macos" class="table-of-contents__link toc-highlight">9. Troubleshooting (macOS)</a><ul><li><a href="#-相機無法偵測" class="table-of-contents__link toc-highlight">❗ 相機無法偵測</a></li><li><a href="#-麥克風無法偵測" class="table-of-contents__link toc-highlight">❗ 麥克風無法偵測</a></li><li><a href="#-secure-browser-變慢--當掉" class="table-of-contents__link toc-highlight">❗ Secure Browser 變慢 / 當掉</a></li></ul></li><li><a href="#10-pre-exam-tutorial強烈建議" class="table-of-contents__link toc-highlight">10. Pre-Exam Tutorial（強烈建議）</a></li><li><a href="#11-48-hour-checklist專為-macos-考生" class="table-of-contents__link toc-highlight">11. 48-Hour Checklist（專為 macOS 考生）</a><ul><li><a href="#系統" class="table-of-contents__link toc-highlight">系統</a></li><li><a href="#網路" class="table-of-contents__link toc-highlight">網路</a></li><li><a href="#介面與設備" class="table-of-contents__link toc-highlight">介面與設備</a></li><li><a href="#環境" class="table-of-contents__link toc-highlight">環境</a></li><li><a href="#軟體" class="table-of-contents__link toc-highlight">軟體</a></li><li><a href="#測試" class="table-of-contents__link toc-highlight">測試</a></li></ul></li><li><a href="#12-final-notes" class="table-of-contents__link toc-highlight">12. Final Notes</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
