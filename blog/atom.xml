@@ -2,11 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rhincodon.studio/blog</id>
     <title>Rhincodon Studio Blog</title>
-    <updated>2025-10-12T00:00:00.000Z</updated>
+    <updated>2025-11-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rhincodon.studio/blog"/>
     <subtitle>Rhincodon Studio Blog</subtitle>
     <icon>https://rhincodon.studio/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[n8n Course Level 1]]></title>
+        <id>https://rhincodon.studio/blog/n8n-course-level1</id>
+        <link href="https://rhincodon.studio/blog/n8n-course-level1"/>
+        <updated>2025-11-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[跟著人生攻略研究所所長，一步步完成 n8n Level 1 測驗的紀錄。]]></summary>
+        <content type="html"><![CDATA[<p>跟著人生攻略研究所所長的腳步，正式踏進 n8n Course Level 1 的測驗流程。<br>
+<!-- -->整體難度不算高，但實際作答時，還是有幾題需要重新確認邏輯與分類方式。</p>
+<p>事前準備按著所長的教學完成註冊與金鑰取得：<br>
+<a href="https://lifecheatslab.com/n8n-course/#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E8%A8%BB%E5%86%8A_Level_1_%E6%B8%AC%E9%A9%97%EF%BC%8C%E5%8F%96%E5%BE%97%E5%80%8B%E4%BA%BA%E9%87%91%E9%91%B0" target="_blank" rel="noopener noreferrer">https://lifecheatslab.com/n8n-course/#第一步：註冊_Level_1_測驗，取得個人金鑰</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="理論題">理論題<a href="https://rhincodon.studio/blog/n8n-course-level1#%E7%90%86%E8%AB%96%E9%A1%8C" class="hash-link" aria-label="理論題的直接連結" title="理論題的直接連結" translate="no">​</a></h3>
+<p>在整份題庫裡，理論題的第 4 題與第 6 題特別容易讓人猶豫。</p>
+<ul>
+<li>
+<p><strong>第 4 題</strong>：What can you do if there is no n8n node for an app/service that you want to use in a workflow?</p>
+</li>
+<li>
+<p><strong>第 6 題</strong>：Which of the following are Trigger Nodes?<br>
+<!-- -->依題目列出的選項來看，除了 Schedule node；Airtable node 實作上也可以。</p>
+</li>
+</ul>
+<p>其他題目主要檢查對 n8n 基礎概念的掌握：哪些節點能啟動 workflow、Code node 必須回傳什麼格式、資料結構怎麼判讀等等。<br>
+<!-- -->多利用官方文件與搜尋，大部分都能順利作答。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="實作題">實作題<a href="https://rhincodon.studio/blog/n8n-course-level1#%E5%AF%A6%E4%BD%9C%E9%A1%8C" class="hash-link" aria-label="實作題的直接連結" title="實作題的直接連結" translate="no">​</a></h3>
+<p>實作題的部分只要掌握流程邏輯，其實不算太複雜。<br>
+<!-- -->最方便的方式，是先匯入官方提供的完成版 workflow，再依照題目逐步調整即可。</p>
+<p>官方 workflow JSON：<br>
+<a href="https://docs.n8n.io/_workflows/courses/level-one/finished.json" target="_blank" rel="noopener noreferrer">https://docs.n8n.io/_workflows/courses/level-one/finished.json</a></p>
+<p>匯入後，照題目要求調整各個節點：補上 IF 條件、調整資料格式、確認流程順序。<br>
+<!-- -->Airtable 在這份測驗裡不需要真的去操作，直接略過就好，不會影響作答結果。<br>
+<!-- -->整體流程清楚、節點之間的連動也好檢查，照著步驟實作很快就能完成。</p>
+<p>搭配課程文件的補充說明：<br>
+<a href="https://docs.n8n.io/courses/level-one/chapter-7/" target="_blank" rel="noopener noreferrer">https://docs.n8n.io/courses/level-one/chapter-7/</a></p>
+<p>雖然只是 Level 1，但完成後看到進度亮起來，還是有種踏出第一步的成就感。</p>
+<p><img decoding="async" loading="lazy" alt="n8n-course-level1.png" src="https://rhincodon.studio/assets/images/n8n-course-level1-c0cd91486111556753cc4d4c4626e4be.png" width="986" height="633" class="img_ev3q"></p>]]></content>
+        <author>
+            <name>balnibarbian</name>
+            <uri>https://rhincodon.studio</uri>
+        </author>
+        <category label="n8n-course-level1" term="n8n-course-level1"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Why the World Calls Him “Da Vinci”]]></title>
         <id>https://rhincodon.studio/blog/leonardo-da-vinci-name</id>
