@@ -4,10 +4,107 @@
         <title>Rhincodon Studio Blog</title>
         <link>https://rhincodon.studio/blog</link>
         <description>Rhincodon Studio Blog</description>
-        <lastBuildDate>Thu, 27 Nov 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Nov 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hant</language>
+        <item>
+            <title><![CDATA[將多個 Nx Apps 部署到同一個 Nginx 下]]></title>
+            <link>https://rhincodon.studio/blog/2025/11/28</link>
+            <guid>https://rhincodon.studio/blog/2025/11/28</guid>
+            <pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[教你如何將 Nx monorepo 內多個 Angular / Web apps 透過 Nginx 部署到同一個域名或不同路徑下。]]></description>
+            <content:encoded><![CDATA[<p>Nx monorepo 內通常包含多個前端或後端應用，例如：</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">apps/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  app1/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  app2/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  app3/</span><br></span></code></pre></div></div>
+<p>透過 Nx build 後，你會得到：</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dist/apps/app1/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dist/apps/app2/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dist/apps/app3/</span><br></span></code></pre></div></div>
+<p>本篇文章將教你如何把這些 apps 同時部署到同一個 Nginx 下，並使用不同路徑或不同子網域。</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="方法-a使用不同路徑最常見">方法 A：使用不同路徑（最常見）<a href="https://rhincodon.studio/blog/2025/11/28#%E6%96%B9%E6%B3%95-a%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%91%E6%9C%80%E5%B8%B8%E8%A6%8B" class="hash-link" aria-label="方法 A：使用不同路徑（最常見）的直接連結" title="方法 A：使用不同路徑（最常見）的直接連結" translate="no">​</a></h2>
+<p>例如：</p>
+<ul>
+<li><a href="https://example.com/app1" target="_blank" rel="noopener noreferrer">https://example.com/app1</a></li>
+<li><a href="https://example.com/app2" target="_blank" rel="noopener noreferrer">https://example.com/app2</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nginx-設定">Nginx 設定<a href="https://rhincodon.studio/blog/2025/11/28#nginx-%E8%A8%AD%E5%AE%9A" class="hash-link" aria-label="Nginx 設定的直接連結" title="Nginx 設定的直接連結" translate="no">​</a></h3>
+<div class="language-nginx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-nginx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  listen 80;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  server_name example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location /app1/ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    alias /usr/share/nginx/html/app1/;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    try_files $uri $uri/ /app1/index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location /app2/ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    alias /usr/share/nginx/html/app2/;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    try_files $uri $uri/ /app2/index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="angular--nx-build-指令">Angular / Nx Build 指令<a href="https://rhincodon.studio/blog/2025/11/28#angular--nx-build-%E6%8C%87%E4%BB%A4" class="hash-link" aria-label="Angular / Nx Build 指令的直接連結" title="Angular / Nx Build 指令的直接連結" translate="no">​</a></h3>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">nx build app1 --configuration production --base-href=/app1/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nx build app2 --configuration production --base-href=/app2/</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="部署的資料夾結構">部署的資料夾結構<a href="https://rhincodon.studio/blog/2025/11/28#%E9%83%A8%E7%BD%B2%E7%9A%84%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B" class="hash-link" aria-label="部署的資料夾結構的直接連結" title="部署的資料夾結構的直接連結" translate="no">​</a></h3>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/usr/share/nginx/html/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  app1/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  app2/</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="方法-b使用不同子網域">方法 B：使用不同子網域<a href="https://rhincodon.studio/blog/2025/11/28#%E6%96%B9%E6%B3%95-b%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E5%AD%90%E7%B6%B2%E5%9F%9F" class="hash-link" aria-label="方法 B：使用不同子網域的直接連結" title="方法 B：使用不同子網域的直接連結" translate="no">​</a></h2>
+<p>例如：</p>
+<ul>
+<li><a href="https://app1.example.com/" target="_blank" rel="noopener noreferrer">https://app1.example.com</a></li>
+<li><a href="https://app2.example.com/" target="_blank" rel="noopener noreferrer">https://app2.example.com</a></li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nginx-設定-1">Nginx 設定<a href="https://rhincodon.studio/blog/2025/11/28#nginx-%E8%A8%AD%E5%AE%9A-1" class="hash-link" aria-label="Nginx 設定的直接連結" title="Nginx 設定的直接連結" translate="no">​</a></h3>
+<div class="language-nginx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-nginx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  server_name app1.example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  root /usr/share/nginx/html/app1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  try_files $uri $uri/ /index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  server_name app2.example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  root /usr/share/nginx/html/app2;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  try_files $uri $uri/ /index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="angular--nx-build-指令-1">Angular / Nx Build 指令<a href="https://rhincodon.studio/blog/2025/11/28#angular--nx-build-%E6%8C%87%E4%BB%A4-1" class="hash-link" aria-label="Angular / Nx Build 指令的直接連結" title="Angular / Nx Build 指令的直接連結" translate="no">​</a></h3>
+<p>由於每個 app 直接掛在根目錄（/），<code>baseHref</code> 設為 <code>/</code> 即可：</p>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">nx build app1 --configuration production --base-href=/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nx build app2 --configuration production --base-href=/</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="方法-c透過-proxy-pass-導流到後端服務api--ssr--node--nodejs">方法 C：透過 Proxy Pass 導流到後端服務（API / SSR / Node / NodeJS）<a href="https://rhincodon.studio/blog/2025/11/28#%E6%96%B9%E6%B3%95-c%E9%80%8F%E9%81%8E-proxy-pass-%E5%B0%8E%E6%B5%81%E5%88%B0%E5%BE%8C%E7%AB%AF%E6%9C%8D%E5%8B%99api--ssr--node--nodejs" class="hash-link" aria-label="方法 C：透過 Proxy Pass 導流到後端服務（API / SSR / Node / NodeJS）的直接連結" title="方法 C：透過 Proxy Pass 導流到後端服務（API / SSR / Node / NodeJS）的直接連結" translate="no">​</a></h2>
+<p>如果你的 Nx monorepo 中包含後端服務（例如 NodeJS API），你可以使用 <code>proxy_pass</code>：
+讓 Nginx 將 <code>/api</code> 相關請求導向後端 server。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nginx-proxy-pass-設定範例">Nginx Proxy Pass 設定範例<a href="https://rhincodon.studio/blog/2025/11/28#nginx-proxy-pass-%E8%A8%AD%E5%AE%9A%E7%AF%84%E4%BE%8B" class="hash-link" aria-label="Nginx Proxy Pass 設定範例的直接連結" title="Nginx Proxy Pass 設定範例的直接連結" translate="no">​</a></h3>
+<div class="language-nginx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-nginx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">server {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  listen 80;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  server_name example.com;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  # 前端 Angular App</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location / {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    root /usr/share/nginx/html/app1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    try_files $uri $uri/ /index.html;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  # API Proxy</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  location /api/ {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_pass http://localhost:3333/; # Nx serve / NodeJS 的 API port</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_http_version 1.1;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_set_header Upgrade $http_upgrade;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_set_header Connection 'upgrade';</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_set_header Host $host;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    proxy_cache_bypass $http_upgrade;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="常見-proxy-pass-場景">常見 Proxy Pass 場景<a href="https://rhincodon.studio/blog/2025/11/28#%E5%B8%B8%E8%A6%8B-proxy-pass-%E5%A0%B4%E6%99%AF" class="hash-link" aria-label="常見 Proxy Pass 場景的直接連結" title="常見 Proxy Pass 場景的直接連結" translate="no">​</a></h3>
+<ol>
+<li>
+<p><strong>Nx + Angular 前端 + NodeJS API</strong></p>
+<ul>
+<li><code>/</code> → 前端</li>
+<li><code>/api</code> → 後端（NodeJS）</li>
+</ul>
+</li>
+<li>
+<p><strong>多後端服務（微服務結構）</strong></p>
+<ul>
+<li><code>/auth</code> → Auth service</li>
+<li><code>/order</code> → Order service</li>
+<li><code>/payment</code> → Payment service</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="nx--nodejs-服務常用指令">Nx + NodeJS 服務常用指令<a href="https://rhincodon.studio/blog/2025/11/28#nx--nodejs-%E6%9C%8D%E5%8B%99%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4" class="hash-link" aria-label="Nx + NodeJS 服務常用指令的直接連結" title="Nx + NodeJS 服務常用指令的直接連結" translate="no">​</a></h3>
+<div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">nx serve api</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">nx build api</span><br></span></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="常見問題faq">常見問題（FAQ）<a href="https://rhincodon.studio/blog/2025/11/28#%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8Cfaq" class="hash-link" aria-label="常見問題（FAQ）的直接連結" title="常見問題（FAQ）的直接連結" translate="no">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="為什麼重新整理會出現-404">為什麼重新整理會出現 404？<a href="https://rhincodon.studio/blog/2025/11/28#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E6%9C%83%E5%87%BA%E7%8F%BE-404" class="hash-link" aria-label="為什麼重新整理會出現 404？的直接連結" title="為什麼重新整理會出現 404？的直接連結" translate="no">​</a></h3>
+<p>SPA（如 Angular）本身沒有真正的路徑，因此 Nginx 需要設定：</p>
+<div class="language-nginx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-nginx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">try_files $uri $uri/ /index.html;</span><br></span></code></pre></div></div>
+<p>這會讓所有路徑回到 Angular 的 router 處理。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="proxy-pass-無法連線">Proxy Pass 無法連線？<a href="https://rhincodon.studio/blog/2025/11/28#proxy-pass-%E7%84%A1%E6%B3%95%E9%80%A3%E7%B7%9A" class="hash-link" aria-label="Proxy Pass 無法連線？的直接連結" title="Proxy Pass 無法連線？的直接連結" translate="no">​</a></h3>
+<p>檢查：</p>
+<ul>
+<li>後端 port 是否正確（如 <code>3333</code>）</li>
+<li>後端是否允許來自 localhost 的 request</li>
+<li>Nginx 有沒有加 <code>proxy_set_header Host $host</code></li>
+<li>是否需要 HTTPS → HTTP 的 <code>proxy_redirect off;</code></li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="總結">總結<a href="https://rhincodon.studio/blog/2025/11/28#%E7%B8%BD%E7%B5%90" class="hash-link" aria-label="總結的直接連結" title="總結的直接連結" translate="no">​</a></h2>
+<p>你可以透過三種方式把多個 Nx apps 與後端部署在同一個 Nginx：</p>
+<ol>
+<li><strong>不同路徑</strong>（最常見、單一 domain）</li>
+<li><strong>不同子網域</strong>（乾淨、好管理）</li>
+<li><strong>Proxy Pass 導後端 API</strong>（前後端整合最佳解）</li>
+</ol>
+<p>只要正確設定：</p>
+<ul>
+<li>Nginx alias/root</li>
+<li>Angular baseHref</li>
+<li>try_files</li>
+<li>proxy_pass（如有後端 API）</li>
+</ul>
+<p>即可達成完整的 Nx monorepo 部署架構。</p>]]></content:encoded>
+            <category>nx</category>
+            <category>angular</category>
+            <category>nginx</category>
+            <category>deployment</category>
+        </item>
         <item>
             <title><![CDATA[Nx App 拆分優勢與策略步驟]]></title>
             <link>https://rhincodon.studio/blog/nx-app-split-strategy</link>
