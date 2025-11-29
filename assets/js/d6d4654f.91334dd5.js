@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3788],{6889:e=>{e.exports=JSON.parse('{"tag":{"label":"pod","permalink":"/docs/tags/pod","allTagsPath":"/docs/tags","count":1,"items":[{"id":"kubernetes/objects/kubernetes-pod","title":"pod","description":"\u8a8d\u8b58 pod\u3002","permalink":"/docs/kubernetes/pod"}],"unlisted":false}}')}}]);

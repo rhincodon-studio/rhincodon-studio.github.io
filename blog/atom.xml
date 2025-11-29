@@ -2,11 +2,99 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rhincodon.studio/blog</id>
     <title>Rhincodon Studio Blog</title>
-    <updated>2025-11-28T00:00:00.000Z</updated>
+    <updated>2025-11-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rhincodon.studio/blog"/>
     <subtitle>Rhincodon Studio Blog</subtitle>
     <icon>https://rhincodon.studio/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[使用 MDX 打造互動式文件]]></title>
+        <id>https://rhincodon.studio/blog/docusaurus-mdx-demo</id>
+        <link href="https://rhincodon.studio/blog/docusaurus-mdx-demo"/>
+        <updated>2025-11-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[為什麼選擇 MDX？]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="為什麼選擇-mdx">為什麼選擇 MDX？<a href="https://rhincodon.studio/blog/docusaurus-mdx-demo#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87-mdx" class="hash-link" aria-label="為什麼選擇 MDX？的直接連結" title="為什麼選擇 MDX？的直接連結" translate="no">​</a></h2>
+<p>當你需要說明重點提示、互動範例或分頁程式碼等更豐富的敘事方式時，可以在 Markdown 中混用 React 元件；而一般文字仍維持純 Markdown，兼顧易寫與彈性。</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>提示</div><div class="admonitionContent_BuS1"><p>讓 MDX 區塊維持精簡（建議 40 行內），並替所有媒體提供描述性的 alt 文字，方便後續翻譯與在地化。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="分頁內容範例">分頁內容範例<a href="https://rhincodon.studio/blog/docusaurus-mdx-demo#%E5%88%86%E9%A0%81%E5%85%A7%E5%AE%B9%E7%AF%84%E4%BE%8B" class="hash-link" aria-label="分頁內容範例的直接連結" title="分頁內容範例的直接連結" translate="no">​</a></h2>
+<div class="theme-tabs-container tabs-container tabList__CuJ"><ul role="tablist" aria-orientation="horizontal" class="tabs"><li role="tab" tabindex="0" aria-selected="true" class="tabs__item tabItem_LNqP tabs__item--active">CLI 檢查清單</li><li role="tab" tabindex="-1" aria-selected="false" class="tabs__item tabItem_LNqP">TypeScript 筆記</li><li role="tab" tabindex="-1" aria-selected="false" class="tabs__item tabItem_LNqP">Example</li></ul><div class="margin-top--md"><div role="tabpanel" class="tabItem_Ymn6"><ol>
+<li>下載最新範本並執行 <code>npm install</code>。</li>
+<li>透過 <code>npm run start</code> 在本機確認頁面載入正常。</li>
+<li>將遇到的錯誤與重現步驟加到 issue 描述中。</li>
+</ol></div><div role="tabpanel" class="tabItem_Ymn6" hidden=""><ul>
+<li>先在 Markdown 定義所有可翻譯字串，再用 props 傳入 React 元件。</li>
+<li>為 MDX 互動元件設計 <code>Props</code> 型別，方便其他作者複用。</li>
+<li>若多篇文章都用到相同邏輯，可移到 <code>@site/src/components/</code> 匯入。</li>
+</ul></div><div role="tabpanel" class="tabItem_Ymn6" hidden=""><div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">&lt;Tabs groupId="language"&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &lt;TabItem value="checklist" label="CLI 檢查清單"&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        1. 下載最新範本並執行 `npm install`。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        2. 透過 `npm run start` 在本機確認頁面載入正常。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        3. 將遇到的錯誤與重現步驟加到 issue 描述中。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &lt;/TabItem&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &lt;TabItem value="notes" label="TypeScript 筆記"&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        - 先在 Markdown 定義所有可翻譯字串，再用 props 傳入 React 元件。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        - 為 MDX 互動元件設計 `Props` 型別，方便其他作者複用。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        - 若多篇文章都用到相同邏輯，可移到 `@site/src/components/` 匯入。</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    &lt;/TabItem&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">&lt;/Tabs&gt;</span><br></span></code></pre></div></div></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="可用的主題元件">可用的主題元件<a href="https://rhincodon.studio/blog/docusaurus-mdx-demo#%E5%8F%AF%E7%94%A8%E7%9A%84%E4%B8%BB%E9%A1%8C%E5%85%83%E4%BB%B6" class="hash-link" aria-label="可用的主題元件的直接連結" title="可用的主題元件的直接連結" translate="no">​</a></h2>
+<ul>
+<li><a href="https://docusaurus.io/docs/markdown-features/tabs" target="_blank" rel="noopener noreferrer"><code>Tabs</code> 與 <code>TabItem</code></a> 能在同一區塊切換語言或平台</li>
+<li><a href="https://docusaurus.io/docs/markdown-features/code-blocks#mdx-component" target="_blank" rel="noopener noreferrer"><code>CodeBlock</code></a> 方便加上區塊標題或切成 live editor</li>
+<li><a href="https://docusaurus.io/docs/markdown-features/admonitions" target="_blank" rel="noopener noreferrer"><code>Admonition</code></a> 與 <a href="https://docusaurus.io/docs/markdown-features/details#mdx" target="_blank" rel="noopener noreferrer"><code>Details</code></a> 可凸顯警示或折疊補充說明</li>
+</ul>]]></content>
+        <author>
+            <name>balnibarbian</name>
+            <uri>https://rhincodon.studio</uri>
+        </author>
+        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="mdx" term="mdx"/>
+        <category label="docs" term="docs"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在 WebStorm 中整合 Codex 工作流程]]></title>
+        <id>https://rhincodon.studio/blog/webstorm-codex-setup</id>
+        <link href="https://rhincodon.studio/blog/webstorm-codex-setup"/>
+        <updated>2025-11-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[教你如何在 WebStorm 透過 Codex CLI 快速完成指令、腳本與部落格撰寫工作。]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="什麼是-codex">什麼是 Codex？<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E4%BB%80%E9%BA%BC%E6%98%AF-codex" class="hash-link" aria-label="什麼是 Codex？的直接連結" title="什麼是 Codex？的直接連結" translate="no">​</a></h2>
+<p><a href="https://openai.com/zh-Hant/codex/" target="_blank" rel="noopener noreferrer">Codex</a> 是 OpenAI 提供的程式碼生成助手，能解讀自然語言並輸出程式碼、指令或文字。本文示範如何在 WebStorm 中透過 Codex CLI 建立一個以對話驅動的工作流程。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="為什麼要在-ide-中使用-codex">為什麼要在 IDE 中使用 Codex？<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E5%9C%A8-ide-%E4%B8%AD%E4%BD%BF%E7%94%A8-codex" class="hash-link" aria-label="為什麼要在 IDE 中使用 Codex？的直接連結" title="為什麼要在 IDE 中使用 Codex？的直接連結" translate="no">​</a></h2>
+<p>WebStorm 已經提供完善的 TypeScript/React 體驗，但若再結合 Codex CLI，就能以對話方式生成模板、整理文件或批次修改檔案。這讓日常的重複性動作（例如建立部落格、填寫 front matter、插入多國語系內容）都能在同一個 IDE 視窗完成。</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>提示</div><div class="admonitionContent_BuS1"><p>Codex 維持在同一個版本最容易除錯，建議專案以 <code>package.json</code> script 管理，例如 <code>"codex": "npx codex"</code>，避免團隊成員版本不一致。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="安裝與初始設定">安裝與初始設定<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E5%AE%89%E8%A3%9D%E8%88%87%E5%88%9D%E5%A7%8B%E8%A8%AD%E5%AE%9A" class="hash-link" aria-label="安裝與初始設定的直接連結" title="安裝與初始設定的直接連結" translate="no">​</a></h2>
+<ol>
+<li>先在系統層級安裝 Codex CLI：<!-- -->
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm install -g @openai/codex-cli</span><br></span></code></pre></div></div>
+</li>
+<li>在專案根目錄建立或更新 <code>.context/</code>（例如 <code>docusaurus-guidelines.md</code>），把前置規範寫入，並於每次執行前指示 Codex 先閱讀。</li>
+<li>若想用固定指令呼叫 Codex，可在 <code>package.json</code> 中加入腳本（底層仍呼叫全域 <code>codex</code> 或 <code>npx codex</code>）：<!-- -->
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"scripts"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"codex"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"codex"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"codex:plan"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"codex --plan"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="在-webstorm-綁定-codex-指令">在 WebStorm 綁定 Codex 指令<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E5%9C%A8-webstorm-%E7%B6%81%E5%AE%9A-codex-%E6%8C%87%E4%BB%A4" class="hash-link" aria-label="在 WebStorm 綁定 Codex 指令的直接連結" title="在 WebStorm 綁定 Codex 指令的直接連結" translate="no">​</a></h2>
+<ol>
+<li>打開 <strong>Run/Debug Configurations</strong>，新增 <strong>npm</strong> 或 <strong>Shell Script</strong>。</li>
+<li>指定 Script 為 <code>codex</code>，Working directory 指向專案根目錄。</li>
+<li>勾選 <strong>Activate tool window</strong> 讓結果出現在 Run 面板，方便複製貼上。</li>
+<li>若想要快速輸入指令，可在 <strong>Keymap → Plugins → External Tools</strong> 為 <code>codex</code> 配快捷鍵，例如 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>;</kbd>。</li>
+</ol>
+<p>透過以上設定，就能在任意檔案按一次快捷鍵，立即呼叫 Codex 完成編輯或回覆。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="常見工作流程">常見工作流程<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E5%B8%B8%E8%A6%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" class="hash-link" aria-label="常見工作流程的直接連結" title="常見工作流程的直接連結" translate="no">​</a></h2>
+<ul>
+<li><strong>撰寫部落格</strong>：執行 <code>npm run codex -- "create blog on webstorm"</code>，Codex 會依照 <code>.context</code> 中的規範與當天日期產生檔案，再由你在 WebStorm 內調整。</li>
+<li><strong>批次重構</strong>：在終端切換到目標資料夾，讓 Codex 讀取檔案後輸入具體需求，例如「將所有 fetch 換成 axios」。</li>
+<li><strong>Docs QA</strong>：透過 <code>codex --plan</code> 整理多步驟修改，把輸出貼進 <code>.mdx</code> 檔案，並利用 WebStorm Diff 介面快速檢查。做法是先在終端執行 <code>npm run codex:plan -- \"&lt;需求描述&gt;\"</code>，依序執行計畫並將 Codex 產生的內容貼回對應文件，最後用 Diff 檢查每一步是否符合預期。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="疑難排解">疑難排解<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3" class="hash-link" aria-label="疑難排解的直接連結" title="疑難排解的直接連結" translate="no">​</a></h2>
+<ul>
+<li><strong>終端無法解析 codex 指令</strong>：確認 WebStorm 使用的 Node 版本與系統一致，或在設定中的 Shell path 改成 <code>/bin/zsh -l</code>。</li>
+<li><strong>CLI 無法寫入檔案</strong>：在 Codex 命令前加入 <code>CODEx_SANDBOX=workspace-write</code>（依專案需求）或檢查 repository 權限。</li>
+<li><strong>輸出語言錯誤</strong>：把「預設使用繁體中文」寫在 <code>.context</code>，並提醒 Codex 每次編輯前重新閱讀該檔案。</li>
+</ul>
+<p>善用這套流程，就能在 WebStorm 中持續保持專注，同時享受到 Codex 的自動化與解題效率。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="其他可搭配的工具">其他可搭配的工具<a href="https://rhincodon.studio/blog/webstorm-codex-setup#%E5%85%B6%E4%BB%96%E5%8F%AF%E6%90%AD%E9%85%8D%E7%9A%84%E5%B7%A5%E5%85%B7" class="hash-link" aria-label="其他可搭配的工具的直接連結" title="其他可搭配的工具的直接連結" translate="no">​</a></h2>
+<ul>
+<li><a href="https://platform.claude.com/" target="_blank" rel="noopener noreferrer">Claude</a>：在需要長篇推理或分析文件時可當作補充顧問。</li>
+<li><a href="https://kiro.dev/" target="_blank" rel="noopener noreferrer">Kiro</a>：主打工程自動化，可接續 Codex 的結果進行端到端測試或部署。</li>
+</ul>]]></content>
+        <author>
+            <name>balnibarbian</name>
+            <uri>https://rhincodon.studio</uri>
+        </author>
+        <category label="codex" term="codex"/>
+        <category label="webstorm" term="webstorm"/>
+        <category label="automation" term="automation"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[將多個 Nx Apps 部署到同一個 Nginx 下]]></title>
         <id>https://rhincodon.studio/blog/2025/11/28</id>
