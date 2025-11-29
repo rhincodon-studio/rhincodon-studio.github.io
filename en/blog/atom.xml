@@ -41,6 +41,49 @@
         <category label="docs" term="docs"/>
     </entry>
     <entry>
+        <title type="html"><![CDATA[前端常見測試框架比較：Vitest、Jest、Karma、Jasmine]]></title>
+        <id>https://rhincodon.studio/en/blog/frontend-test-runner-comparison</id>
+        <link href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison"/>
+        <updated>2025-11-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[以實務需求角度比較四個常見前端測試框架，協助你選擇適合的工具鏈。]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="為什麼要比較測試框架">為什麼要比較測試框架？<a href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E6%AF%94%E8%BC%83%E6%B8%AC%E8%A9%A6%E6%A1%86%E6%9E%B6" class="hash-link" aria-label="Direct link to 為什麼要比較測試框架？" title="Direct link to 為什麼要比較測試框架？" translate="no">​</a></h2>
+<p>團隊在規劃測試策略時，往往需要兼顧開發體驗、既有 CI/CD 工具與瀏覽器支援度。這篇文章整理 Vitest、Jest、Karma 與 Jasmine 的定位差異，讓你快速判斷哪一套最符合專案需求。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="核心差異一覽">核心差異一覽<a href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison#%E6%A0%B8%E5%BF%83%E5%B7%AE%E7%95%B0%E4%B8%80%E8%A6%BD" class="hash-link" aria-label="Direct link to 核心差異一覽" title="Direct link to 核心差異一覽" translate="no">​</a></h2>
+<table><thead><tr><th>框架</th><th>核心定位</th><th>執行環境</th><th>亮點</th><th>適合情境</th></tr></thead><tbody><tr><td>Vitest</td><td>Vite 生態系預設測試框架</td><td>Node.js（可透過 Vitest UI 觸發瀏覽器）</td><td>與 Vite 設定共享、原生 ESM、啟動極快</td><td>使用 Vite/Vue/React 並追求極速回饋的專案</td></tr><tr><td>Jest</td><td>Facebook 推出的通用測試框架</td><td>Node.js、JSDOM</td><td>Snapshot 測試、模組模擬、社群資源豐富</td><td>需要穩定 API、搭配 React/React Native 的團隊</td></tr><tr><td>Karma</td><td>利用真實瀏覽器跑測試的 Test Runner</td><td>真實瀏覽器（Chrome、Firefox 等）</td><td>可整合 Webpack/SystemJS，適合舊專案</td><td>必須驗證瀏覽器 API 或需要大量整合測試</td></tr><tr><td>Jasmine</td><td>早期 BDD 風格測試框架</td><td>瀏覽器或 Node.js</td><td>零依賴、語法簡潔</td><td>嵌入式或低依賴場景、AngularJS 舊專案</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>若專案使用 Angular 14+ 並維持 CLI 預設，通常會同時搭配 Karma + Jasmine；若改用 Vite 驅動專案，就可考慮 Vitest 取代 Jest/Karma。</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="快速評估指南">快速評估指南<a href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison#%E5%BF%AB%E9%80%9F%E8%A9%95%E4%BC%B0%E6%8C%87%E5%8D%97" class="hash-link" aria-label="Direct link to 快速評估指南" title="Direct link to 快速評估指南" translate="no">​</a></h2>
+<ol>
+<li><strong>優先考慮開發體驗</strong>：需要快速回饋與原生 ESM？Vitest 幾乎零設定，且能共用 Vite alias。</li>
+<li><strong>看重生態與教學資源</strong>：Jest 在社群套件、文件、CI 範例上仍最完整，適合多語言團隊。</li>
+<li><strong>要測到真實瀏覽器</strong>：Karma 擅長打開多個瀏覽器並收集覆蓋率，對 Web API、Legacy 專案仍有價值。</li>
+<li><strong>依賴最少、可嵌入</strong>：Jasmine 沒有外部 runner，但可輕鬆嵌入自訂腳本或 Karma、Protractor 等工具。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="實務選型建議">實務選型建議<a href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison#%E5%AF%A6%E5%8B%99%E9%81%B8%E5%9E%8B%E5%BB%BA%E8%AD%B0" class="hash-link" aria-label="Direct link to 實務選型建議" title="Direct link to 實務選型建議" translate="no">​</a></h2>
+<ul>
+<li><strong>Vite + Vue/React 新專案</strong>：直接選 Vitest，搭配 <code>vitest run --coverage</code> 即可整合 CI。</li>
+<li><strong>Next.js 或 React Native</strong>：Jest 有現成的環境模擬與 Snapshot 工具，且能與 Testing Library 無縫整合。</li>
+<li><strong>長期維護的 AngularJS/Angular 專案</strong>：保留 Karma + Jasmine，逐步以 Web Test Runner 或 Vitest 替換即可。</li>
+<li><strong>需要真實瀏覽器 E2E 但不想導入 Cypress/Playwright</strong>：Karma + Jasmine 仍是輕量選擇，可與 WebDriver 共享設定。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="總結">總結<a href="https://rhincodon.studio/en/blog/frontend-test-runner-comparison#%E7%B8%BD%E7%B5%90" class="hash-link" aria-label="Direct link to 總結" title="Direct link to 總結" translate="no">​</a></h2>
+<p>選擇測試框架時請先盤點：</p>
+<ul>
+<li>Build 工具（Vite、Webpack、Angular CLI）</li>
+<li>目標執行環境（Node、瀏覽器、Hybrid）</li>
+<li>期望維護成本（社群範例、既有腳本）</li>
+</ul>
+<p>只要釐清上述條件，就能在 Vitest、Jest、Karma、Jasmine 之間做出更符合團隊節奏的決策。</p>]]></content>
+        <author>
+            <name>balnibarbian</name>
+            <uri>https://rhincodon.studio</uri>
+        </author>
+        <category label="testing" term="testing"/>
+        <category label="vitest" term="vitest"/>
+        <category label="jest" term="jest"/>
+        <category label="karma" term="karma"/>
+        <category label="jasmine" term="jasmine"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[在 WebStorm 中整合 Codex 工作流程]]></title>
         <id>https://rhincodon.studio/en/blog/webstorm-codex-setup</id>
         <link href="https://rhincodon.studio/en/blog/webstorm-codex-setup"/>
