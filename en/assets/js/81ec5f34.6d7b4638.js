@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7882],{46341:a=>{a.exports=JSON.parse('{"authors":[{"name":"balnibarbian","title":"balnibarbian","url":"https://rhincodon.studio","page":{"permalink":"/en/blog/authors/balnibarbian"},"key":"balnibarbian","count":6}]}')}}]);
