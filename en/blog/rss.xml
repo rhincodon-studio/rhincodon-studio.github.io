@@ -4,10 +4,94 @@
         <title>Rhincodon Studio Blog</title>
         <link>https://rhincodon.studio/en/blog</link>
         <description>Rhincodon Studio Blog</description>
-        <lastBuildDate>Wed, 03 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Diffoci：讓容器建構可重現的驗證捷徑]]></title>
+            <link>https://rhincodon.studio/en/blog/diffoci-containers</link>
+            <guid>https://rhincodon.studio/en/blog/diffoci-containers</guid>
+            <pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[簡介 Diffoci 如何把容器元件解構成可比對的片段，協助開發者在 CI 或本地重建出相同的映像。]]></description>
+            <content:encoded><![CDATA[<p>Diffoci 來自 <a href="https://github.com/reproducible-containers/diffoci" target="_blank" rel="noopener noreferrer">reproducible-containers/diffoci</a>，它把容器的每一層、清單和設定拆解成容易比較的片段，用以檢查本地建構或 CI 執行是否真的可重複輸出同樣的映像。這篇分享 Diffoci 的角色、驗證流程與 CI 整合思路，讓你不必再用人工 diff 無數個 tarball。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="何謂-diffoci">何謂 Diffoci<a href="https://rhincodon.studio/en/blog/diffoci-containers#%E4%BD%95%E8%AC%82-diffoci" class="hash-link" aria-label="Direct link to 何謂 Diffoci" title="Direct link to 何謂 Diffoci" translate="no">​</a></h2>
+<p>Diffoci 的核心概念是「解構」容器映像。它會把 OCI image layout 和映像內部的檔案系統逐一展開成 tarball，再比對 metadata（manifest、config）與物理內容，這樣就能照顧到檔案權限、時間戳與層順序等細節，而不是只比較映像 ID。</p>
+<p>比較時，Diffoci 會提供可經驗證的差異報表（包括檔案新增/刪除、二進位內容差異、metadata 不一致），也能把結果存成檔案以供追查。若你在本地手動 build 出來的映像與上游 CI 給的 artifact 有差異，Diffoci 能指出是哪一層、哪個檔案不對，甚至反推是否是建構參數或 buildkit cache 導致。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="驗證流程切片">驗證流程切片<a href="https://rhincodon.studio/en/blog/diffoci-containers#%E9%A9%97%E8%AD%89%E6%B5%81%E7%A8%8B%E5%88%87%E7%89%87" class="hash-link" aria-label="Direct link to 驗證流程切片" title="Direct link to 驗證流程切片" translate="no">​</a></h2>
+<p>Diffoci 支援把驗證拆成幾個步驟，方便串到工作流程：</p>
+<ul>
+<li><strong>拉出參考映像</strong>：先把前次可信任的映像或某個 release 下載成 OCI layout（例如 <code>docker save</code> + <code>umoci unpack</code>），作為 baseline。</li>
+<li><strong>產生待驗證映像</strong>：用相同 Dockerfile/BuildKit pipeline 產出新的映像，並將它也轉成 OCI layout。</li>
+<li><strong>執行 Diffoci 比對</strong>：用 <code>diffoci diff</code>（或類似指令）比較兩個 OCI layout，差異會分門別類地列出檔案層、metadata 層與 config 層的差異。</li>
+<li><strong>分析報告</strong>：Diffoci 可輸出 XML/JSON 或 human-readable 形式的報告，並載入到 CI artifact，以便快速定位檔案不一致、層內重複或時間戳漂移等問題。</li>
+<li><strong>回饋開發流程</strong>：若差異在不可接受範圍（例如確保 byte-for-byte 相同），可以直接使該步驟 fail；若只是時間戳變動，可透過指令清除 metadata，確認誤判再走下一輪。</li>
+</ul>
+<p>這種分層比較讓你不必猜測哪個檔案被改寫，也避免單純比較 digest 時疏漏時間戳或權限的變化。此外，這個流程也可套用在多平台建構（例如 amd64 與 arm64），只要把不同平台的映像各自解構，就能逐層對齊差異。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="把-diffoci-拉進-ci">把 Diffoci 拉進 CI<a href="https://rhincodon.studio/en/blog/diffoci-containers#%E6%8A%8A-diffoci-%E6%8B%89%E9%80%B2-ci" class="hash-link" aria-label="Direct link to 把 Diffoci 拉進 CI" title="Direct link to 把 Diffoci 拉進 CI" translate="no">​</a></h2>
+<p>在 CI（比如 GitHub Actions、GitLab CI）中，只要把 Diffoci 當成一個步驟來執行，就能在建構完成後立刻驗證結果：</p>
+<ol>
+<li>先執行 build，產生映像與 OCI layout。</li>
+<li>從 release 或 artifacts 下載先前的 OCI layout 作 baseline。</li>
+<li>以 Diffoci 比對兩者，Diffoci 會回傳差異數據與檔案清單。</li>
+<li>根據 policy 決定：若要 strict reproducibility，就讓差異導致 job fail；若只需資料一致，就把報告存起來讓人 review。</li>
+</ol>
+<p>透過 Diffoci 的報告還可以自動化產生監控告警，例如「新映像多出了私密金鑰」或「某系統套件版本被升級」，以便在 release 前即時攔截潛在風險。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon.studio/en/blog/diffoci-containers#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="Direct link to 小結" title="Direct link to 小結" translate="no">​</a></h2>
+<p>Diffoci 並非單純把映像 tarball 做 <code>diff</code>，而是把 OCI 元素拆解成會被 CI 消費的維度（metadata、層、檔案內容），再提供可讀報告與 exit code，讓可重現性從「理想」變成「pipeline guard」。若你的團隊在意每次 build 的 bitwise 相同性，或希望在多個環境比對結果，Diffoci 是一個值得納入的檢查步驟。</p>]]></content:encoded>
+            <category>容器</category>
+            <category>可重現性</category>
+            <category>CI</category>
+            <category>diffoci</category>
+        </item>
+        <item>
+            <title><![CDATA[短網址設計]]></title>
+            <link>https://rhincodon.studio/en/blog/short-url-design</link>
+            <guid>https://rhincodon.studio/en/blog/short-url-design</guid>
+            <pubDate>Thu, 04 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[探討短網址常見的 hash、id+base62 與 snowflake/uuidv7 方案，並比較它們在唯一性、可排序與分散式需求下的取捨。]]></description>
+            <content:encoded><![CDATA[<p>短網址的核心目標，是用有限字元表達最多的唯一值。本篇釐清常見的三種生成思路，並談碰撞、資訊洩漏與可追蹤性的差異。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="hash-function">hash function<a href="https://rhincodon.studio/en/blog/short-url-design#hash-function" class="hash-link" aria-label="Direct link to hash function" title="Direct link to hash function" translate="no">​</a></h2>
+<p>把原始 URL 投射到如 SHA256 或 MD5 的雜湊值，再取前面幾個字元做為短網址。這種做法的好處是每次只要有 URL 就能快速產生對應值，不需先寫入資料庫即可比較是否重複。但缺點也很明顯：</p>
+<ul>
+<li>縮短後缺乏唯一性保證，必須加上碰撞檢查與重試邏輯。</li>
+<li>雜湊值仍承載原始 URL 的資訊片段，理論上可供暴力逆推（尤其選用太短時）。</li>
+<li>無法表示建立順序、也不易追蹤來源，對一些流量分析情境不友善。</li>
+</ul>
+<p>若需求是臨時、開發測試用的短網址，hash 方案能快速上手；但正式服務需要加強碰撞處理與 idempotency，才能避免重複導向。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="id--base62">id + base62<a href="https://rhincodon.studio/en/blog/short-url-design#id--base62" class="hash-link" aria-label="Direct link to id + base62" title="Direct link to id + base62" translate="no">​</a></h2>
+<p>最常見的方式是讓資料庫自增 <code>id</code>，再把值轉成 base62（<code>0-9a-zA-Z</code>）。成品的特徵如下：</p>
+<ul>
+<li>唯一性：只要 <code>id</code> 不會重複，短網址就一定獨一無二。</li>
+<li>可逆性：只要能轉回 base62，就能還原 <code>id</code>，進一步查出原始 URL。</li>
+<li>長度可控：可以預先規劃 <code>id</code> 的最大範圍，轉成 base62 之後落在 6~8 個字元內。</li>
+</ul>
+<p>缺點是需要中心化的資料庫或序列器來協調 <code>id</code> 的分配。若要擴展到多個節點，有額外的分區或跨節點同步成本。此外，字串會隨時間遞增，若想躲避暴露資料量或流量模式，就需要加些混淆手法。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="snowflake--uuidv7--base62">snowflake / uuidv7 + base62<a href="https://rhincodon.studio/en/blog/short-url-design#snowflake--uuidv7--base62" class="hash-link" aria-label="Direct link to snowflake / uuidv7 + base62" title="Direct link to snowflake / uuidv7 + base62" translate="no">​</a></h2>
+<p>進階系統會採用分散式序列產生器，例如 Twitter 的 snowflake 或新的 uuidv7，它們把時間戳、節點編號、序號組合起來，再轉成 base62。這類方案的優勢包括：</p>
+<ul>
+<li>分散式：各節點可以獨立生成 id，不需集中鎖定。</li>
+<li>可排序：產生順序可反映時間（尤其 uuidv7 與 snowflake 的時間前綴）。</li>
+<li>長度合理、碰撞機率接近零。</li>
+</ul>
+<p>將這種 id 再 encode 成 base62，就能在不犧牲可排序性的前提下得到可分享的短網址。如果想更短，可以只取時間戳與序號部分、再加 checksum，降低使用者手動輸入錯誤的風險。這類做法適合高吞吐、跨區域部署或需要追蹤來源的產品級服務。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="整體架構要素">整體架構要素<a href="https://rhincodon.studio/en/blog/short-url-design#%E6%95%B4%E9%AB%94%E6%9E%B6%E6%A7%8B%E8%A6%81%E7%B4%A0" class="hash-link" aria-label="Direct link to 整體架構要素" title="Direct link to 整體架構要素" translate="no">​</a></h2>
+<p>可以把短網址系統想成兩層：儲存層負責維護短碼與原始 URL 的對應，邏輯層負責產生 id、判斷歸戶、追蹤與排程。常見的架構要素包括：</p>
+<ul>
+<li><strong>資料表設計</strong>：主表 <code>short_links</code> 包含 <code>id</code>、<code>short_code</code>、<code>target_url</code>、<code>creator_id</code>、<code>created_at</code>、<code>expires_at</code>、<code>status</code>（例如 active/disabled）、<code>usage_count</code>、<code>last_accessed_at</code>。若衍生功能如 A/B 測試或廣告導流，可再加 <code>campaign_id</code>、<code>variant_tag</code>。建議以 <code>short_code</code> 為唯一索引，加速查找。</li>
+<li><strong>解析與 redirect</strong>：解析層收到短碼後，先查資料並更新 <code>usage_count</code>/<code>last_accessed_at</code>，再回傳 302 redirect 到 <code>target_url</code>。這個流程可以部署在 edge 或 CDN 層，盡量維持低延遲；複雜的條件（驗證、廣告插頁）可交由後端服務處理。</li>
+<li><strong>HTTP 狀態選擇</strong>：302（Found）是常見選擇，即使施工中也能快速改回原 URL。若希望搜尋引擎自然索引原址，改用 301（Moved Permanently）。對於可能要調整的短網址，分別設定 <code>redirect_type</code> 欄位控制返回值。</li>
+<li><strong>快取與同步</strong>：由於查表頻率高，配合 Redis/L1 cache 快取 <code>short_code -&gt; target_url</code>，並設定 TTL。若有分散寫入，應設計事件或 stream（Kafka/Change Data Capture）同步至快取節點以免 stale。</li>
+<li><strong>廣告與觀察</strong>：若要放廣告或橫幅頁面，可以在 <code>redirect</code> 前插入檢查，例如 <code>campaign_id</code> 决定是否先導至吸引頁、再透過 client-side script 紀錄曝光後跳轉。也可在 <code>short_links</code> 加 <code>landing_page_html</code> 選項，讓某些短碼呈現自訂落地頁再跳轉。</li>
+<li><strong>追蹤與安全</strong>：加入 <code>referer</code>/<code>utm</code> 欄位、IP 黑名單、rate limit，讓濫用時能降載。另外可以記錄 <code>fingerprint</code> 或 <code>user_agent</code> 供分析使用頻率與地域。</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="總結">總結<a href="https://rhincodon.studio/en/blog/short-url-design#%E7%B8%BD%E7%B5%90" class="hash-link" aria-label="Direct link to 總結" title="Direct link to 總結" translate="no">​</a></h2>
+<p>若是單機、初期方案，<code>id + base62</code> 提供簡單可逆、長度易控的產出；想快速實驗或不想自己維護序列器，就可考慮 <code>hash function</code>（記得補上碰撞處理與 retry）。若系統將來會分散部署、需排序或高可用，<code>snowflake / uuidv7 + base62</code> 是比較周全的選項。也可以混搭，例如用 uuidv7 生成原始 id，再 encode 成 base62，最後加 checksum，兼顧易讀與健壯性。整體架構應涵蓋儲存表、快取、redirect 處理、狀態控制與廣告/觀察擴充，才能支援不同使用情境。</p>]]></content:encoded>
+            <category>短網址</category>
+            <category>hash-function</category>
+            <category>base62</category>
+            <category>snowflake</category>
+        </item>
         <item>
             <title><![CDATA[大稻埕走讀：延伸參考與深度補充]]></title>
             <link>https://rhincodon.studio/en/blog/2025-12-03-dadaocheng-walkthrough-extended</link>
