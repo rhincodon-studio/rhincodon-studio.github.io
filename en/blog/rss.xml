@@ -892,32 +892,5 @@
             <category>language</category>
             <category>leonardo-da-vinci</category>
         </item>
-        <item>
-            <title><![CDATA[什麼是 Langfuse？它可以與 Prometheus 比較嗎？]]></title>
-            <link>https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus</link>
-            <guid>https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus</guid>
-            <pubDate>Fri, 14 Jun 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[介紹 Langfuse 及其與 Prometheus 的比較，說明兩者在監控大型語言模型和系統監控上的不同定位與優勢。]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="什麼是-langfuse">什麼是 Langfuse？<a href="https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus#%E4%BB%80%E9%BA%BC%E6%98%AF-langfuse" class="hash-link" aria-label="Direct link to 什麼是 Langfuse？" title="Direct link to 什麼是 Langfuse？" translate="no">​</a></h2>
-<p>Langfuse 是一個專為大型語言模型（LLM）應用設計的開源監控與分析平台。它聚焦於語言模型的輸入與輸出追蹤，詳細記錄每一次模型交互的請求、回應以及中間狀態，並監控性能指標，如請求延遲和錯誤率。Langfuse 能幫助開發者分析模型行為、調試問題，並藉由直觀的數據可視化界面，提升 AI 應用的穩定性與效能。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="什麼是-prometheus">什麼是 Prometheus？<a href="https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus#%E4%BB%80%E9%BA%BC%E6%98%AF-prometheus" class="hash-link" aria-label="Direct link to 什麼是 Prometheus？" title="Direct link to 什麼是 Prometheus？" translate="no">​</a></h2>
-<p>Prometheus 是一個備受歡迎的開源系統監控和警報工具，常用於監控基礎設施和應用的各種指標。它透過拉取 (pull-based) 的方式收集數據，提供高效的查詢語言（PromQL），廣泛支援各類服務與系統的監控需求。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="langfuse-與-prometheus-的比較">Langfuse 與 Prometheus 的比較<a href="https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus#langfuse-%E8%88%87-prometheus-%E7%9A%84%E6%AF%94%E8%BC%83" class="hash-link" aria-label="Direct link to Langfuse 與 Prometheus 的比較" title="Direct link to Langfuse 與 Prometheus 的比較" translate="no">​</a></h2>
-<table><thead><tr><th>特性</th><th>Langfuse</th><th>Prometheus</th></tr></thead><tbody><tr><td><strong>主要用途</strong></td><td>追蹤與分析大型語言模型的請求與回應</td><td>收集與監控系統與服務的各種指標</td></tr><tr><td><strong>監控對象</strong></td><td>語言模型輸入、輸出及中間狀態</td><td>CPU、記憶體、網路、應用經典指標等</td></tr><tr><td><strong>數據類型</strong></td><td>複雜的文字輸入/輸出、模型生成過程資料</td><td>數值型監控指標（數量、時間、狀態等）</td></tr><tr><td><strong>資料收集方式</strong></td><td>直接集成語言模型調用程式碼進行日誌追蹤</td><td>透過拉取目標端暴露的指標端點收集數據</td></tr><tr><td><strong>可視化工具</strong></td><td>內建界面專注於語言模型互動分析</td><td>隨時可與 Grafana 等可視化工具整合</td></tr><tr><td><strong>用例焦點</strong></td><td>強調 AI 語言模型結果的監控與調試</td><td>廣泛監控 IT 基礎設施與應用性能</td></tr></tbody></table>
-<p>##Langfuse 可與 Prometheus 配合使用嗎？</p>
-<p>雖然 Langfuse 和 Prometheus 在監控領域的重點不同，但兩者並非互斥。在整個 AI 產品架構中，Langfuse 更聚焦於記錄與分析語言模型的輸入與輸出細節，而 Prometheus 負責收集系統的資源使用與服務的健康狀態。開發者可以同時部署這兩套工具，利用 Langfuse 精細追蹤語言模型的性能與行為，並透過 Prometheus 監控底層基礎設施，達到更全面的系統運維與調優效果。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="總結">總結<a href="https://rhincodon.studio/en/blog/what-is-langfuse-and-comparison-with-prometheus#%E7%B8%BD%E7%B5%90" class="hash-link" aria-label="Direct link to 總結" title="Direct link to 總結" translate="no">​</a></h2>
-<ul>
-<li><strong>Langfuse</strong> 是 AI 語言模型互動的專用監控與分析工具，適合用於模型行為追蹤與優化。</li>
-<li><strong>Prometheus</strong> 是通用的系統和應用監控平台，適合監控服務穩定性和資源使用。</li>
-<li>兩者可互補使用，幫助團隊從不同層面掌握系統與 AI 模型的狀態與效能。</li>
-</ul>
-<p>若你正在開發或維運大型語言模型相關的應用，考慮同時導入 Langfuse 和 Prometheus，能讓你的監控體系更加完善與高效。</p>]]></content:encoded>
-            <category>AI</category>
-            <category>監控</category>
-            <category>Langfuse</category>
-            <category>Prometheus</category>
-            <category>比較</category>
-        </item>
     </channel>
 </rss>
