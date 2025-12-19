@@ -2,70 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rhincodon.studio/blog</id>
     <title>Rhincodon Studio Blog</title>
-    <updated>2025-12-17T00:00:00.000Z</updated>
+    <updated>2025-12-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://rhincodon.studio/blog"/>
     <subtitle>Rhincodon Studio Blog</subtitle>
     <icon>https://rhincodon.studio/img/favicon.ico</icon>
-    <entry>
-        <title type="html"><![CDATA[什麼是 n8n？開啟自動化工作流程的新視界]]></title>
-        <id>https://rhincodon.studio/blog/2025/12/17</id>
-        <link href="https://rhincodon.studio/blog/2025/12/17"/>
-        <updated>2025-12-17T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[什麼是 n8n？]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="什麼是-n8n">什麼是 n8n？<a href="https://rhincodon.studio/blog/2025/12/17#%E4%BB%80%E9%BA%BC%E6%98%AF-n8n" class="hash-link" aria-label="什麼是 n8n？的直接連結" title="什麼是 n8n？的直接連結" translate="no">​</a></h2>
-<p>n8n（發音為 “n-eight-n”）是一款開源的工作流程自動化工具，致力於幫助使用者輕鬆建立跨平台整合與自動化流程。與市面上其他類似產品相比，n8n 提供更高的彈性與自訂性，使企業與個人能自主管理數據流與應用整合。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="n8n-的核心特色">n8n 的核心特色<a href="https://rhincodon.studio/blog/2025/12/17#n8n-%E7%9A%84%E6%A0%B8%E5%BF%83%E7%89%B9%E8%89%B2" class="hash-link" aria-label="n8n 的核心特色的直接連結" title="n8n 的核心特色的直接連結" translate="no">​</a></h2>
-<ul>
-<li>
-<p><strong>開源自由</strong><br>
-<!-- -->n8n 採用開源授權，使用者可以免費下載、安裝並自訂符合自身需求的自動化工作流程。</p>
-</li>
-<li>
-<p><strong>多平台整合</strong><br>
-<!-- -->支援超過兩百種常見服務，包括 Google Sheets、Slack、Trello、GitHub 等常用工具，能輕鬆串接各種 API。</p>
-</li>
-<li>
-<p><strong>直觀的視覺化介面</strong><br>
-<!-- -->內建拖拉式介面，使用者無需寫程式即可建立複雜的工作流程，顯著降低自動化門檻。</p>
-</li>
-<li>
-<p><strong>自訂與擴充能力</strong><br>
-<!-- -->支援 JavaScript 腳本，可針對流程邏輯進行高度客製化，滿足多變的商業需求。</p>
-</li>
-<li>
-<p><strong>本地部署與雲端選項</strong><br>
-<!-- -->除了提供自己的雲端服務外，n8n 也允許用戶在私有伺服器或私有雲中部署，強化資料安全管控。</p>
-</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="適用場景">適用場景<a href="https://rhincodon.studio/blog/2025/12/17#%E9%81%A9%E7%94%A8%E5%A0%B4%E6%99%AF" class="hash-link" aria-label="適用場景的直接連結" title="適用場景的直接連結" translate="no">​</a></h2>
-<p>n8n 適合用於各種需要整合資料與自動化流程的場景，比如：</p>
-<ul>
-<li>行銷自動化（如自動將線上表單資料同步至 CRM）</li>
-<li>社群媒體排程發文</li>
-<li>電子商務訂單與庫存管理</li>
-<li>IT 基礎架構監控與告警</li>
-<li>業務流程自動化與報表生成</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="為什麼選擇-n8n">為什麼選擇 n8n？<a href="https://rhincodon.studio/blog/2025/12/17#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87-n8n" class="hash-link" aria-label="為什麼選擇 n8n？的直接連結" title="為什麼選擇 n8n？的直接連結" translate="no">​</a></h2>
-<p>在數位轉型的浪潮中，企業越來越依賴各式 SaaS 與內部系統。n8n 提供使用者一個強大而彈性的工具，讓自動化不再受限於服務提供者的封閉接口，或是昂貴的訂閱費用。加上友善的視覺化工作流程設計，不論是技術人員或業務人員，都能透過 n8n 有效提升工作效率。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="小結">小結<a href="https://rhincodon.studio/blog/2025/12/17#%E5%B0%8F%E7%B5%90" class="hash-link" aria-label="小結的直接連結" title="小結的直接連結" translate="no">​</a></h2>
-<p>n8n 以開源精神為核心，結合強大的整合能力與易用的視覺化介面，正逐步成為企業和開發者自動化工作的首選工具。無論你是想節省重複性工作時間，還是打造符合企業特色的自訂流程，n8n 都提供一條通往高效自動化的捷徑。</p>
-<hr>
-<p>參考資料：</p>
-<ul>
-<li><a href="https://n8n.io/" target="_blank" rel="noopener noreferrer">n8n 官方網站</a></li>
-<li><a href="https://github.com/n8n-io/n8n" target="_blank" rel="noopener noreferrer">GitHub n8n 專案</a></li>
-</ul>]]></content>
-        <author>
-            <name>科技小編</name>
-        </author>
-        <category label="自動化" term="自動化"/>
-        <category label="工作流程" term="工作流程"/>
-        <category label="n8n" term="n8n"/>
-        <category label="開源" term="開源"/>
-        <category label="整合工具" term="整合工具"/>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Diffoci：讓容器建構可重現的驗證捷徑]]></title>
         <id>https://rhincodon.studio/blog/diffoci-containers</id>
