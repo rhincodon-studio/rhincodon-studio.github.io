@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6402],{37891:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/en/blog/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":12,"previousPage":"/en/blog","blogDescription":"Articles and notes from Rhincodon Studio","blogTitle":"Rhincodon Studio Blog"}}')}}]);
